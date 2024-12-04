@@ -15,20 +15,20 @@ import json
 import pprint
 #las credenciales nos ayudarán a conectarnos a la instancia, se recomienda usar un ini file
 #ya que este solo es un ejemplo sencillo, incluimos las credenciales en el mismo código
-os.environ['LOOKERSDK_BASE_URL'] = 'https://nombre_de_la_instancia.cloud.looker.com'
-os.environ['LOOKERSDK_CLIENT_ID'] = 'el_id_de_la_key'
-os.environ['LOOKERSDK_CLIENT_SECRET'] = 'secreto'
+os.environ['LOOKERSDK_BASE_URL'] = 'https://partnersmexico.cloud.looker.com/embed/dashboards/'
+os.environ['LOOKERSDK_CLIENT_ID'] = 'cNM4dQcVmwMtkD9tx5Vj'
+os.environ['LOOKERSDK_CLIENT_SECRET'] = 'Gz2gGbSDHHkGYmQv289nWwq5'
 
 #Primero inicializamos el SDK
 sdk = looker_sdk.init40()
 
 #ajustar las siguientes líneas dependiendo si lo que queremos usar son Looks o Dashboards
 #cuando deseamos crear una url para embeber un dashboard es necesario añadir /embed/dashboards/ a la url base 
-#url= 'https://nombre_de_la_instancia.cloud.looker.com/embed/dashboards/'
+url= 'https://partnersmexico.cloud.looker.com/embed/dashboards/'
 #cuando lo que buscamos es generar una url para embeber una look, únicamente necesitamos añadir /looks/ a la url base
 url= 'https://nombre_de_la_instancia.cloud.looker.com/looks/'
 
-numero_de_dashboard_o_look='9'
+numero_de_dashboard_o_look='2'
 
 #podemos agregar los parámetros por ejemplo algún theme que hayamos creado o bien los filtros
 #el theme que existe por defecto es el de 'Looker'
@@ -66,6 +66,6 @@ respuesta = sdk.create_sso_embed_url(
         "explore",
         "see_sql"
     ],
-    "models": ['nombre-modelo']
+    "models": ['dl_faa']
   })
 print (respuesta)
